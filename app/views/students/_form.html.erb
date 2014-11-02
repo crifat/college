@@ -1,0 +1,108 @@
+<%= form_for @student, :html => { :class => "form-horizontal student" } do |f| %>
+
+    <% if @student.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @student.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:first_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :middle_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :middle_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:middle_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:last_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :gender, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :gender, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:gender]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :date_of_birth, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :date_of_birth, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:date_of_birth]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :admission_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :admission_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:admission_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :contact_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :contact_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:contact_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :batch_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :batch_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:batch_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :fathers_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fathers_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:fathers_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :mothers_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mothers_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:mothers_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :guardians_contact, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :guardians_contact, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:guardians_contact]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@student[:address]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            students_path, :class => 'btn btn-default' %>
+
+<% end %>

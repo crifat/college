@@ -1,0 +1,41 @@
+<%- model_class = Student -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @student.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:middle_name) %>:</strong></dt>
+  <dd><%= @student.middle_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @student.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
+  <dd><%= @student.gender %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:date_of_birth) %>:</strong></dt>
+  <dd><%= @student.date_of_birth %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:admission_number) %>:</strong></dt>
+  <dd><%= @student.admission_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contact_number) %>:</strong></dt>
+  <dd><%= @student.contact_number %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:batch_id) %>:</strong></dt>
+  <dd><%= @student.batch_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fathers_name) %>:</strong></dt>
+  <dd><%= @student.fathers_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mothers_name) %>:</strong></dt>
+  <dd><%= @student.mothers_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:guardians_contact) %>:</strong></dt>
+  <dd><%= @student.guardians_contact %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @student.address %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              students_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_student_path(@student), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              student_path(@student),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
