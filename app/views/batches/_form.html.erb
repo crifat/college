@@ -29,6 +29,12 @@
     </div>
     <%= error_span(@batch[:title]) %>
   </div>
+    <div class="control-group">
+      <%= f.label 'department id', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.select :department_id, options_from_collection_for_select(Department.all, :id, :title), {}, include_blank: false ,prompt: true, :class => 'text_field form-control' %>
+      </div>
+    </div>
   <div class="control-group">
     <%= f.label :year, :class => 'control-label' %>
     <div class="controls">
@@ -36,6 +42,7 @@
     </div>
     <%= error_span(@batch[:year]) %>
   </div>
+
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

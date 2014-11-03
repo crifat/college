@@ -9,7 +9,7 @@
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:year) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:all_students) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,7 +20,7 @@
         <td><%= batch.code %></td>
         <td><%= batch.title %></td>
         <td><%= batch.year %></td>
-        <td><%=l batch.created_at %></td>
+        <td><%= link_to batch.year, {controller: 'batches', action: 'all_students', batch_id: batch.id}, class: 'btn btn-success' %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_batch_path(batch), :class => 'btn btn-default btn-xs' %>

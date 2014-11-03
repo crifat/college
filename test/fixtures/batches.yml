@@ -2,12 +2,13 @@
 #
 # Table name: batches
 #
-#  id         :integer          not null, primary key
-#  code       :string(255)
-#  title      :string(255)
-#  year       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id            :integer          not null, primary key
+#  code          :string(255)
+#  title         :string(255)
+#  year          :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  department_id :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

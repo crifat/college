@@ -61,6 +61,10 @@ class BatchesController < ApplicationController
     end
   end
 
+  def all_students
+    @students = Student.where(batch_id: params[:batch_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_batch
@@ -69,6 +73,6 @@ class BatchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def batch_params
-      params.require(:batch).permit(:code, :title, :year)
+      params.require(:batch).permit(:code, :title, :year, :department_id)
     end
 end
