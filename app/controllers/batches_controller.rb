@@ -4,7 +4,12 @@ class BatchesController < ApplicationController
   # GET /batches
   # GET /batches.json
   def index
-    @batches = Batch.all
+    if params[:department_id].present?
+      @batches = Batch.where(department_id: params[:department_id])
+    else
+      @batches = Batch.all
+    end
+
   end
 
   # GET /batches/1
