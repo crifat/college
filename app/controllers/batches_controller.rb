@@ -61,9 +61,7 @@ class BatchesController < ApplicationController
     end
   end
 
-  def all_students
-    @students = Student.where(batch_id: params[:batch_id])
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

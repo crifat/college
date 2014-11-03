@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
-  resources :departments
+  resources :departments do
+    resources :batches do
+      resources :students
+    end
+  end
 
   resources :students
 
-  resources :batches
+  resources :batches do
+    resources :students
+  end
 
   resources :years
 

@@ -4,7 +4,12 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    if params[:batch_id].present?
+      @students = Student.where(batch_id: params[:batch_id])
+    else
+      @students = Student.all
+    end
+
   end
 
   # GET /students/1
